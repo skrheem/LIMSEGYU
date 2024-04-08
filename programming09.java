@@ -78,6 +78,7 @@ public class programming09 {
                             int newX = i + x; // newX = -1
                             int newY = j + y; // newY = -1
                             if (newX >= 0 && newX < rows && newY >= 0 && newY < cols) {
+                                // false && true && false && true => false
                                 // newX >= 0
                                 // -1 >= 0 : false
                                 // newX < rows
