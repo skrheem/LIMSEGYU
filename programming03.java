@@ -1,24 +1,19 @@
-package chap09;
+package chap11;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.StringTokenizer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class programming03 {
     public static void main(String[] args) {
-        String s = "of the people, by the people, for the people";
-        try {
-            showTokens(s, ", ");
-        } catch (NoSuchElementException e) {
-            System.out.println("끝");
-        }
-    }
-    static String showTokens(String a, String b) {
-        StringTokenizer stringTokenizer = new StringTokenizer(a, b);
-        List<String> tokens = new ArrayList<>();
-        while(true) {
-            System.out.println(stringTokenizer.nextToken());
-        }
+        Map<String, Integer> map = new HashMap<>();
+        map.put("김열공", 80);
+        map.put("최고봉", 90);
+        map.put("우등생", 95);
+        map.put("나자바", 88);
+        Scanner in = new Scanner(System.in);
+        System.out.print("이름을 입력하세요 : ");
+        String s = in.nextLine();
+        System.out.println(map.get(s));
     }
 }

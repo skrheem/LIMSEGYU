@@ -1,23 +1,37 @@
-package chap09;
+package chap11;
 
-class Shape{}
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-class Rectangle extends Shape {}
+class Person {
+    String name;
+    int age;
 
-class Circle extends Shape {}
-
-public class programming02 {
-    public static void main(String[] args) {
-        Rectangle r = new Rectangle();
-        try {
-            casting(r);
-        } catch (ClassCastException e) {
-            System.out.println("Rectangle은 Circle의 하위 클래스가 아니기 때문에 변환할 수 없습니다.");
-        }
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
-    static void casting(Shape s) {
-        Circle c = (Circle) s;
+
+    @Override
+    public String toString() {
+        return name + " : " + age;
     }
 }
+public class programming02 {
+    public static void main(String[] args) {
+        Set<Person> set = new HashSet<>();
+        set.add(new Person("김열공", 20));
+        set.add(new Person("최고봉", 56));
+        set.add(new Person("우등생", 10));
+        set.add(new Person("나자바", 35));
 
-
+        for (Person p:set) {
+            System.out.println(p.toString());
+        }
+        Iterator<Person> i = set.iterator();
+        System.out.println(set);
+        while(i.hasNext())
+            System.out.println(i.next());
+    }
+}

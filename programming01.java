@@ -1,17 +1,17 @@
-package chap09;
-class MyDate {
-    int year = 2035;
-    int month = 12;
-    int day = 25;
-}
+package chap11;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class programming01 {
     public static void main(String[] args) {
-        MyDate d = null;
-        if(args.length == 0) {
-            d = new MyDate();
-            System.out.printf("%d년 %d월 %d일\n", d.year, d.month, d.day);
-            return;
+        ArrayList<String> list = new ArrayList<>();
+        Scanner in = new Scanner(System.in);
+        for(int i = 0; i < 4; i++)
+            list.add(in.nextLine());
+        for (String s:list) {
+            if(s.length() == 2)
+                System.out.print(s + " ");
         }
-        System.out.printf("%d년 %d월 %d일\n", d.year, d.month, d.day);
     }
 }

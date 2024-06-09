@@ -1,24 +1,16 @@
-package chap09;
-class Pair<T> {
-    T first;
-    T second;
-    public Pair(T first, T second) {
-        this.first = first;
-        this.second = second;
-    }
-    T first() {
-        return first;
-    }
-    T second() {
-        return second;
-    }
-}
+package chap11;
+
+import java.util.*;
+
 public class programming04 {
     public static void main(String[] args) {
-        Pair<Integer> p1 = new Pair<>(10, 20);
-        Pair<Double> p2 = new Pair<>(10.0, 20.0);
-
-        System.out.println(p1.first());
-        System.out.println(p2.second());
+        Set<String> a1 = new HashSet<>();
+        a1.addAll(Arrays.asList("독수리","나비","염소","고양이","개미","여우"));
+        System.out.println("hashset" + a1);
+        TreeSet<String> t1 = new TreeSet<>(a1);
+        System.out.println("treeset" + t1);
+        System.out.println("첫 번째 동물 : " + t1.first());
+        System.out.println("마지막 동물 : " + t1.last());
+        System.out.println("나비 앞에 있는 동물 : " + t1.lower("나비"));
     }
 }

@@ -1,28 +1,17 @@
-package chap09;
+package chap11;
 
-class Max<T> {
-    Number max(Number t1, Number t2) {
-        if(t1.doubleValue() > t2.doubleValue())
-            return t1;
-        else
-            return t2;
-    }
-    String max(String t1, String t2) {
-        if(t1.length() > t2.length())
-            return t1;
-        else
-            return t2;
-    }
-}
+import java.util.HashMap;
+import java.util.Map;
 
 public class programming06 {
     public static void main(String[] args) {
-        Max<Number> n = new Max<>();
-        System.out.println(n.max(10.0, 8.0));
-        System.out.println(n.max(5, 8.0));
+        HashMap<String, String> map = new HashMap<>();
+        map.put("호랑이", "tiger");
+        map.put("표범", "leopart");
+        map.put("사자", "lion");
 
-        Max<String> s = new Max<>();
-        System.out.println(s.max("Hello","Hi"));
-        System.out.println(s.max("Good", "morning"));
+        System.out.println("변경 전 : " + map);
+        map.replaceAll((key, value) -> value.toUpperCase());
+        System.out.println("변경 후 : " + map);
     }
 }
